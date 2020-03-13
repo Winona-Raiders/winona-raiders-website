@@ -11,11 +11,11 @@ jobs:
         uses: actions/checkout@master
       - name: Setup node
         uses: actions/setup-node@v1
+      - run: npm ci
       - run: npm run build
-      - name: Deploy website
-        uses: SamKirkland/FTP-Deploy-Action@3.0.0
-        with:
-          ftp-server: ${{ secrets.FTP_HOST }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/
+      - run: sudo apt-get install git-ftp
+      - run: git config git-ftp.url ${{ secrets.FTP_HOST }}
+      - run: git config git-ftp.user ${{ secrets.FTP_USERNAME }}
+      - run: git config git-ftp.password ${{ secrets.FTP_PASSWORD }}
+      - run: git config git-ftp.syncroot build/
+      - run: git ftp push
