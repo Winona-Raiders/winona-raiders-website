@@ -1,21 +1,41 @@
-import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core";
+import { Container, CssBaseline, makeStyles, Paper } from "@material-ui/core";
+import { fade } from "@material-ui/core/styles/colorManipulator";
+import React, { useEffect, useState } from "react";
+import BackgroundImage from "../../img/Training_bg.jpg";
+import ReactMarkDown from "react-markdown";
+import source from "../../content/Home.md";
 
-const useStyles = makeStyles({
-  container: { backgroundColor: "#cfe8fc", height: "100vh" }
-});
+const useStyles = makeStyles((theme) => ({
+  container: {
+    backgroundColor: fade(theme.palette.background, 0.5),
+    paddingTop: "18px",
+    paddingBottom: "18px",
+  },
+  backgroundImage: {
+    backgroundSize: "cover",
+    backgroundImage: `url(${BackgroundImage})`,
+  },
+}));
 
-const Training = props => {
+const Training = () => {
+  const [content, setContent] = useState("");
+  useEffect(() => {
+    fetch(source)
+      .then((response) => response.text())
+      .then((text) => {
+        setContent(text);
+      });
+  }, []);
+
   const classes = useStyles();
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container className={classes.container} maxWidth="xl">
-        <Typography>Training</Typography>
-      </Container>
+      <Paper className={classes.backgroundImage}>
+        <Container className={classes.container} maxWidth="xl">
+          <ReactMarkDown source={content} />
+        </Container>
+      </Paper>
     </React.Fragment>
   );
 };

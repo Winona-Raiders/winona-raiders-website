@@ -16,16 +16,14 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: "#ff4400",
+      main: "#000000",
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
     },
     secondary: {
-      light: "#0066ff",
-      main: "#0044ff",
-      // dark: will be calculated from palette.secondary.main,
-      contrastText: "#ffcc00",
+      main: "#ffffff",
     },
+    background: "#cfe8fc",
     // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.
     contrastThreshold: 3,
@@ -39,7 +37,10 @@ const theme = createMuiTheme({
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+  },
+  transparentBackground: {
+    backgroundColor: theme.palette.secondary.light,
+    height: "100vh",
   },
 }));
 
