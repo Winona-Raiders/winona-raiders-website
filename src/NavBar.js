@@ -7,11 +7,9 @@ import { useTabsWithRouter } from "./Routing/useTabWithRouter";
 import strings from "./strings";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   appBar: {
     backgroundColor: theme.palette.primary.light,
+    flex: "0 1 auto",
   },
   headline: {
     color: theme.palette.primary.contrastText,
@@ -32,6 +30,7 @@ const Navbar = () => {
         <TabLink label="Home" value="/" />
         <TabLink label="Training" value="/training" />
         <TabLink label="Juniors" value="/juniors" />
+        <TabLink label="Gallery" value="/gallery" />
       </Tabs>
     </AppBar>
   );

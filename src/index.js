@@ -7,10 +7,11 @@ import { default as React } from "react";
 import ReactDOM from "react-dom";
 import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
+import Navbar from "./NavBar";
+import Gallery from "./pages/Gallery/Gallery";
 import Home from "./pages/Home/Home";
 import Juniors from "./pages/Juniors/Juniors";
 import Training from "./pages/Training/Training";
-import Navbar from "./NavBar";
 
 const theme = createMuiTheme({
   palette: {
@@ -21,9 +22,10 @@ const theme = createMuiTheme({
       // contrastText: will be calculated to contrast with palette.primary.main
     },
     secondary: {
-      main: "#ffffff",
+      main: "#add8e6",
     },
     background: "#cfe8fc",
+    black: "#000000",
     // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.
     contrastThreshold: 3,
@@ -36,7 +38,9 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    display: "flex",
+    flexFlow: "column",
+    height: "100%",
   },
   transparentBackground: {
     backgroundColor: theme.palette.secondary.light,
@@ -61,6 +65,9 @@ const Root = () => {
             </Route>
             <Route path="/juniors">
               <Juniors />
+            </Route>
+            <Route path="/gallery">
+              <Gallery />
             </Route>
           </Switch>
         </div>

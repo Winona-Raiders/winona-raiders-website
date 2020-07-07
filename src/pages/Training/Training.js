@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import BackgroundImage from "../../img/Training_bg.jpg";
 import ReactMarkDown from "react-markdown";
 import source from "../../content/Home.md";
+import Footer from "../../components/Footer";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -34,6 +35,7 @@ const Training = () => {
       <Paper className={classes.backgroundImage}>
         <Container className={classes.container} maxWidth="xl">
           <ReactMarkDown source={content} />
+          <Footer />
         </Container>
       </Paper>
     </React.Fragment>
