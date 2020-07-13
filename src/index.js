@@ -14,6 +14,13 @@ import Juniors from "./pages/Juniors/Juniors";
 import Training from "./pages/Training/Training";
 
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: `cursive`,
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+  },
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,

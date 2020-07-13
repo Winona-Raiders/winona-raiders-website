@@ -21,7 +21,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = () => {
   const classes = useStyles();
-  const tabValue = useTabsWithRouter(["/juniors", "/training", "/"], "/");
+  const tabValue = useTabsWithRouter(
+    ["/juniors", "/training", "/gallery", "/"],
+    "/"
+  );
 
   return (
     <AppBar className={classes.appBar} position="sticky">
