@@ -13,6 +13,8 @@ import Home from "./pages/Home/Home";
 import Juniors from "./pages/Juniors/Juniors";
 import Training from "./pages/Training/Training";
 
+// TODO: Implement responsive design with react-responsive
+
 const theme = createMuiTheme({
   typography: {
     fontFamily: `cursive`,
