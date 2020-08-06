@@ -11,6 +11,7 @@ import Navbar from "./NavBar";
 import Home from "./pages/Home/Home";
 import Juniors from "./pages/Juniors/Juniors";
 import Training from "./pages/Training/Training";
+import Impressum from "./pages/Impressum/Impressum";
 
 // TODO: Implement responsive design with react-responsive
 
@@ -73,6 +74,9 @@ const Root = () => {
             </Route>
             <Route path="/juniors">
               <Juniors />
+            </Route>
+            <Route path="/impressum">
+              <Impressum />
             </Route>
           </Switch>
         </div>

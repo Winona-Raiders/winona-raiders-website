@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: theme.palette.primary.light,
     flex: "0 1 auto",
+    position: "absolute",
   },
   headline: {
     color: theme.palette.primary.contrastText,
@@ -21,7 +22,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = () => {
   const classes = useStyles();
-  const tabValue = useTabsWithRouter(["/juniors", "/training", "/"], "/");
+  const tabValue = useTabsWithRouter(
+    ["/juniors", "/training", "/", "/impressum"],
+    "/"
+  );
 
   return (
     <AppBar className={classes.appBar} position="sticky">
@@ -30,6 +34,7 @@ const Navbar = () => {
         <TabLink label="Home" value="/" />
         <TabLink label="Training" value="/training" />
         <TabLink label="Juniors" value="/juniors" />
+        <TabLink label="impressum" value="/impressum" />
       </Tabs>
     </AppBar>
   );

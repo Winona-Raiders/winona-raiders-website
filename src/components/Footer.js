@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     backgroundColor: fade(theme.palette.black, 0.7),
     color: "white",
-    marginTop: "auto",
   },
   impressum: {
     display: "flex",
@@ -29,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     width: "48px",
   },
   minMargin: {
-    minHeight: "12px",
+    minHeight: "24px",
   },
 }));
 

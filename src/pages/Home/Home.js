@@ -8,14 +8,16 @@ import {
 } from "@material-ui/core";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import React from "react";
-import withAutoplay from "react-awesome-slider/dist/autoplay";
 import AwesomeSlider from "react-awesome-slider";
+import withAutoplay from "react-awesome-slider/dist/autoplay";
 import AwesomeSliderStyles from "react-awesome-slider/src/styles";
-import Footer from "../../components/Footer";
 import BackgroundImage from "../../img/Home_bg.jpg";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 const useStyles = makeStyles((theme) => ({
+  typography: {
+    margin: "12px 0 12px 0",
+  },
   backgroundImage: {
     flex: "1 1 auto",
     backgroundSize: "cover",
@@ -23,14 +25,14 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     backgroundColor: fade(theme.palette.background, 0.5),
-    paddingTop: "18px",
+    paddingTop: "120px",
     paddingBottom: "18px",
     height: "100%",
     display: "flex",
     flexFlow: "column",
   },
   gallery: {
-    height: "30%",
+    maxHeight: "250px",
     width: "60%",
     alignSelf: "center",
     marginBottom: "64px",
@@ -75,41 +77,56 @@ const Home = () => {
             cssModule={AwesomeSliderStyles}
             play={true}
             cancelOnInteraction={true}
-            interval={1000}
+            interval={4000}
             className={classes.gallery}
             organicArrows={false}
           >
             {getGalleryImages(images)}
           </AutoplaySlider>
-          <Typography className={classes.welcome}>
-            Wir sind ein 1995 gegründetes Ultimate Frisbee Team aus Mödling.
-            Unsere gut 40 aktiven Mitglieder vereint die Begeisterung am Sport
-            mit der Frisbeescheibe. <br />
-            Der Verein umfasst folgende Teams:
-            <h4>- Winona Raiders</h4>
+          <div className={classes.welcome}>
+            <Typography className={classes.typography}>
+              Wir sind ein 1995 gegründetes Ultimate Frisbee Team aus Mödling.
+              Unsere gut 40 aktiven Mitglieder vereint die Begeisterung am Sport
+              mit der Frisbeescheibe. <br />
+              Der Verein umfasst folgende Teams:
+            </Typography>
+            <Typography
+              className={classes.typography}
+              variant="h6"
+              component="h6"
+            >
+              - Winona Raiders
+            </Typography>
             Die Kampfmannschaft des Vereins trainiert zweimal pro Woche und
             bereitet sich so nicht nur auf zahlreiche Turniere sondern auch auf
             das Highlight der Saison, die Österreichischen Beach
             Staatsmeisterschaften in Bibione, vor.
-            <h4>- Privateers</h4>
-            Mädchen und Burschen im Alter von 10 bis 15 spielen in unserem Team
-            "Privateers". Die Jugendmannschaft des Vereins trainiert einmal pro
-            Woche und nimmt
-            <br />
-            <br />
-            Alle, die einen fairen Teamsport ausüben möchten, sind bei uns
-            herzlich willkommen! Du suchst ein Frisbee-Team in Mödling? Melde
-            dich bei uns (
-            <Link
-              color="secondary"
-              style={{ display: "contents" }}
-              href={"mailto:info@winonaraiders.org"}
+            <Typography
+              className={classes.typography}
+              variant="h6"
+              component="h6"
             >
-              info@winonaraiders.org
-            </Link>
-            ) und schau vorbei, wir freuen uns auf dich !
-          </Typography>
-          <Footer />
+              - Privateers
+            </Typography>
+            <Typography className={classes.typography}>
+              Mädchen und Burschen im Alter von 10 bis 15 spielen in unserem
+              Team "Privateers". Die Jugendmannschaft des Vereins trainiert
+              einmal pro Woche und nimmt
+            </Typography>
+            <Typography className={classes.typography}>
+              Alle, die einen fairen Teamsport ausüben möchten, sind bei uns
+              herzlich willkommen! Du suchst ein Frisbee-Team in Mödling? Melde
+              dich bei uns (
+              <Link
+                color="secondary"
+                style={{ display: "contents" }}
+                href={"mailto:info@winonaraiders.org"}
+              >
+                info@winonaraiders.org
+              </Link>
+              ) und schau vorbei, wir freuen uns auf dich !
+            </Typography>
+          </div>
         </Container>
       </Paper>
     </React.Fragment>

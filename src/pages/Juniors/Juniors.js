@@ -1,14 +1,12 @@
 import { Container, CssBaseline, makeStyles, Paper } from "@material-ui/core";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import React from "react";
-import Footer from "../../components/Footer";
-import Teamfoto from "../../img/Bibione_teamfoto.jpg";
 import BackgroundImage from "../../img/Home_bg.jpg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
     backgroundColor: fade(theme.palette.background, 0.5),
-    paddingTop: "18px",
+    paddingTop: "120px",
     paddingBottom: "18px",
     height: "100%",
     display: "flex",
@@ -31,14 +29,7 @@ const Juniors = () => {
       <CssBaseline />
       <Paper className={classes.backgroundImage}>
         <Container className={classes.container} maxWidth="xl">
-          <div>
-            {/* <img
-              className={classes.teamfoto}
-              src={Teamfoto}
-              alt="Teamfoto Bibione"
-            /> */}
-          </div>
-          <Footer />
+          <div></div>
         </Container>
       </Paper>
     </React.Fragment>
