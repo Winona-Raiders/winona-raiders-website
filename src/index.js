@@ -8,7 +8,6 @@ import ReactDOM from "react-dom";
 import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./NavBar";
-import Gallery from "./pages/Gallery/Gallery";
 import Home from "./pages/Home/Home";
 import Juniors from "./pages/Juniors/Juniors";
 import Training from "./pages/Training/Training";
@@ -74,9 +73,6 @@ const Root = () => {
             </Route>
             <Route path="/juniors">
               <Juniors />
-            </Route>
-            <Route path="/gallery">
-              <Gallery />
             </Route>
           </Switch>
         </div>

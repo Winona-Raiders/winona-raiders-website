@@ -8,11 +8,13 @@ import {
 } from "@material-ui/core";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import React from "react";
+import withAutoplay from "react-awesome-slider/dist/autoplay";
 import AwesomeSlider from "react-awesome-slider";
 import AwesomeSliderStyles from "react-awesome-slider/src/styles";
 import Footer from "../../components/Footer";
 import BackgroundImage from "../../img/Home_bg.jpg";
 
+const AutoplaySlider = withAutoplay(AwesomeSlider);
 const useStyles = makeStyles((theme) => ({
   backgroundImage: {
     flex: "1 1 auto",
@@ -37,9 +39,9 @@ const useStyles = makeStyles((theme) => ({
     width: "50%",
   },
   welcome: {
-    width: "70%",
+    width: "60%",
     alignSelf: "center",
-    backgroundColor: fade(theme.palette.black, 0.5),
+    backgroundColor: fade(theme.palette.black, 0.7),
     color: "white",
     padding: "12px",
   },
@@ -69,12 +71,16 @@ const Home = () => {
       <CssBaseline />
       <Paper className={classes.backgroundImage}>
         <Container className={classes.container} maxWidth="xl">
-          <AwesomeSlider
+          <AutoplaySlider
             cssModule={AwesomeSliderStyles}
+            play={true}
+            cancelOnInteraction={true}
+            interval={1000}
             className={classes.gallery}
+            organicArrows={false}
           >
             {getGalleryImages(images)}
-          </AwesomeSlider>
+          </AutoplaySlider>
           <Typography className={classes.welcome}>
             Wir sind ein 1995 gegründetes Ultimate Frisbee Team aus Mödling.
             Unsere gut 40 aktiven Mitglieder vereint die Begeisterung am Sport
