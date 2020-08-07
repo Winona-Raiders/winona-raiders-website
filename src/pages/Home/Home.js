@@ -33,15 +33,12 @@ const useStyles = makeStyles((theme) => ({
   },
   gallery: {
     maxHeight: "250px",
-    width: "60%",
+    maxWidth: "800px",
     alignSelf: "center",
     marginBottom: "64px",
   },
-  teamfoto: {
-    width: "50%",
-  },
   welcome: {
-    width: "60%",
+    maxWidth: "800px",
     alignSelf: "center",
     backgroundColor: fade(theme.palette.black, 0.7),
     color: "white",
