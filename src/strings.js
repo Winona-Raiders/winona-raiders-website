@@ -1,5 +1,5 @@
 const strings = {
-  headline: "Ultimate Frisbee Team Mödling",
+  headline: "Ultimate Frisbee Mödling",
 };
 
 export default strings;

@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "center",
     backgroundColor: fade(theme.palette.black, 0.7),
     color: "white",
-    padding: "12px",
+    padding: "24px",
   },
 }));
 
@@ -108,7 +108,7 @@ const Home = () => {
             <Typography className={classes.typography}>
               Mädchen und Burschen im Alter von 10 bis 15 spielen in unserem
               Team "Privateers". Die Jugendmannschaft des Vereins trainiert
-              einmal pro Woche und nimmt
+              einmal pro Woche und nimmt an zahlreichen Turnieren im Jahr teil.
             </Typography>
             <Typography className={classes.typography}>
               Alle, die einen fairen Teamsport ausüben möchten, sind bei uns

@@ -27,18 +27,17 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundImage: `url(${BackgroundImage})`,
   },
-  footer: {
-    padding: "12px",
-    paddingRight: "24px",
-    fontWeight: "bold",
+  textbox: {
+    maxWidth: "800px",
+    alignSelf: "center",
     backgroundColor: fade(theme.palette.black, 0.7),
     color: "white",
+    padding: "24px",
+    width: "-webkit-fill-available",
   },
   impressum: {
     display: "flex",
-    marginRight: "24px",
-    justifyContent: "center",
-    textAlign: "center",
+    minWidth: "250px",
   },
   socialMedia: {
     display: "flex",
@@ -62,7 +61,7 @@ const Impressum = () => {
       <Paper className={classes.backgroundImage}>
         <Container className={classes.container} maxWidth="xl">
           <div className={classes.minMargin} />
-          <div className={classes.footer}>
+          <div className={classes.textbox}>
             <div className={classes.impressum}>
               <Typography className={classes.impressum}>
                 Mödlinger Frisbee Sport Verein <br />

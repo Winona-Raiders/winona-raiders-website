@@ -10,6 +10,7 @@ import {
   TableHead,
   TableRow,
   Typography,
+  Divider,
 } from "@material-ui/core";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import React from "react";
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "center",
     backgroundColor: fade(theme.palette.black, 0.7),
     color: "white",
-    padding: "12px",
+    padding: "24px",
     display: "flex",
   },
   tableHeader: {
@@ -70,14 +71,25 @@ const useStyles = makeStyles((theme) => ({
   training: {
     marginTop: "24px",
   },
+  divider: {
+    margin: "0 24px 0 24px",
+    backgroundColor: "white",
+  },
   locationMaps: {
+    textAlign: "center",
     justifyContent: "space-around",
     display: "flex",
     flexDirection: "column",
   },
 }));
 
-const renderTrainings = ({ classes, header, description, trainings }) => {
+const renderTrainings = ({
+  classes,
+  indexTitle,
+  header,
+  description,
+  trainings,
+}) => {
   return (
     <div className={classes.training}>
       <div className={classes.flexRow}>
@@ -100,15 +112,13 @@ const renderTrainings = ({ classes, header, description, trainings }) => {
                 {trainings.map((training, index) => {
                   const { who, when, where } = training;
                   return (
-                    <>
-                      <TableRow key={`training-info-${index}`}>
-                        <TableCell component="th" scope="row">
-                          {who}
-                        </TableCell>
-                        <TableCell>{when}</TableCell>
-                        <TableCell>{where}</TableCell>
-                      </TableRow>
-                    </>
+                    <TableRow key={`training-info-${indexTitle}-${index}`}>
+                      <TableCell component="th" scope="row">
+                        {who}
+                      </TableCell>
+                      <TableCell>{when}</TableCell>
+                      <TableCell>{where}</TableCell>
+                    </TableRow>
                   );
                 })}
               </TableBody>
@@ -137,6 +147,7 @@ const Training = () => {
             <div className={classes.flexColumn}>
               {renderTrainings({
                 classes,
+                indexTitle: "summer-training",
                 header: "Training Sommer",
                 description:
                   "Das Sommer-Training findet von 1. Mai bis 1. Oktober statt",
@@ -148,13 +159,14 @@ const Training = () => {
                   },
                   {
                     who: "Winona Raiders / Privateers",
-                    when: "Donnerstag 18:00-20:00",
+                    when: "Donnerstag 18:00-19:30",
                     where: "Lerchenhöhe, 2345 Brunn/Gebirge",
                   },
                 ],
               })}
               {renderTrainings({
                 classes,
+                indexTitle: "winter-training",
                 header: "Training Winter",
                 description:
                   "Das Winter-Training findet von 1. Oktober bis 1. Mai statt",
@@ -172,6 +184,11 @@ const Training = () => {
                 ],
               })}
             </div>
+            <Divider
+              orientation="vertical"
+              flexItem={true}
+              className={classes.divider}
+            />
             <div className={classes.locationMaps}>
               <div>
                 <Typography> Dr.-Karl-Giannoni-Gasse </Typography>
