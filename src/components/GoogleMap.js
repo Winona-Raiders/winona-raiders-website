@@ -7,19 +7,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const GoogleMap = ({ locationLink, title }) => {
+const GoogleMap = ({ locationLink, title = "google-map" }) => {
   const classes = useStyles();
   return (
     <iframe
       className={classes.map}
       title={title}
       src={locationLink}
-      width="400"
-      height="300"
-      frameborder="0"
-      allowfullscreen=""
+      width="200"
+      height="150"
+      frameBorder="0"
+      allowFullScreen=""
       aria-hidden="false"
-      tabindex="0"
+      tabIndex="0"
     ></iframe>
   );
 };
