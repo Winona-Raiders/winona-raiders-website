@@ -17,9 +17,6 @@ jobs:
         uses: actions/setup-node@v1
       - run: npm ci
       - run: npm run build
-      - run: sudo apt-get install git-ftp
-      - run: git config git-ftp.url ${{ secrets.FTP_HOST }}
-      - run: git config git-ftp.user ${{ secrets.FTP_USERNAME }}
-      - run: git config git-ftp.password ${{ secrets.FTP_PASSWORD }}
-      - run: git config git-ftp.syncroot build/
-      - run: git ftp push
+      - run: sudo apt-get install ncftp
+      - run: mv ./build ./www.winonaraiders.org
+      - run: ncftpput -R -u ${{ secrets.FTP_USERNAME }} -p ${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST }} . www.winonaraiders.org/
