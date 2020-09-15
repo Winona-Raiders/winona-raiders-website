@@ -1,5 +1,5 @@
-![build branch parameter](https://github.com/Stezido/winona-raiders-website/workflows/Publish/badge.svg?branch=master)
-![publish branch parameter](https://github.com/Stezido/winona-raiders-website/workflows/Build/badge.svg?branch=master)
+![build branch parameter](https://github.com/Stezido/winona-raiders-website/workflows/Publish/badge.svg?event=release)
+![publish branch parameter](https://github.com/Stezido/winona-raiders-website/workflows/Build/badge.svg?event=release)
 # winona-raiders-website
 
 This project build a react app for the Winona Raiders Mödling Frisbee Team and deploys it via github pages.
