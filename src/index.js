@@ -9,9 +9,9 @@ import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./NavBar";
 import Home from "./pages/Home/Home";
+import Impressum from "./pages/Impressum/Impressum";
 import Juniors from "./pages/Juniors/Juniors";
 import Training from "./pages/Training/Training";
-import Impressum from "./pages/Impressum/Impressum";
 
 // TODO: Implement responsive design with react-responsive
 
@@ -22,6 +22,15 @@ const theme = createMuiTheme({
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 750,
+      lg: 950,
+      xl: 1920,
+    },
   },
   palette: {
     primary: {

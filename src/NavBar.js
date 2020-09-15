@@ -1,5 +1,4 @@
 import { IconButton, makeStyles, Typography } from "@material-ui/core";
-import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import React from "react";
 import * as facebookLogo from "./img/icons/facebook_logo.png";
@@ -11,8 +10,7 @@ import strings from "./strings";
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: theme.palette.primary.light,
-    flex: "0 1 auto",
-    position: "absolute",
+    color: "white",
   },
   headline: {
     color: theme.palette.primary.contrastText,
@@ -20,18 +18,29 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     fontSize: "xx-large",
   },
+  tabs: {
+    "& a": {
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "small",
+      },
+    },
+  },
   socialMedia: {
     display: "flex",
     alignItems: "center",
   },
   logo: {
-    margin: "0 0 0 14px",
+    margin: "0 7px 0 7px",
     height: "40px",
     width: "40px",
   },
   headlineContainer: {
     display: "flex",
     justifyContent: "center",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+      alignItems: "center",
+    },
   },
 }));
 
@@ -43,7 +52,7 @@ const Navbar = () => {
   );
 
   return (
-    <AppBar className={classes.appBar} position="sticky">
+    <div className={classes.appBar}>
       <div className={classes.headlineContainer}>
         <Typography className={classes.headline}>{strings.headline}</Typography>
         <div className={classes.socialMedia}>
@@ -77,13 +86,18 @@ const Navbar = () => {
           </IconButton>
         </div>
       </div>
-      <Tabs variant="fullWidth" value={tabValue} aria-label="nav-tabs">
+      <Tabs
+        className={classes.tabs}
+        variant="fullWidth"
+        value={tabValue}
+        aria-label="nav-tabs"
+      >
         <TabLink label="Home" value="/" />
         <TabLink label="Training" value="/training" />
         <TabLink label="Juniors" value="/juniors" />
         <TabLink label="Impressum" value="/impressum" />
       </Tabs>
-    </AppBar>
+    </div>
   );
 };
 

@@ -14,37 +14,41 @@ import AwesomeSliderStyles from "react-awesome-slider/src/styles";
 import BackgroundImage from "../../img/Home_bg.jpg";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
-const useStyles = makeStyles((theme) => ({
-  typography: {
-    margin: "12px 0 12px 0",
-  },
-  backgroundImage: {
-    flex: "1 1 auto",
-    backgroundSize: "cover",
-    backgroundImage: `url(${BackgroundImage})`,
-  },
-  container: {
-    backgroundColor: fade(theme.palette.background, 0.5),
-    paddingTop: "120px",
-    paddingBottom: "18px",
-    height: "100%",
-    display: "flex",
-    flexFlow: "column",
-  },
-  gallery: {
-    maxHeight: "250px",
-    maxWidth: "800px",
-    alignSelf: "center",
-    marginBottom: "64px",
-  },
-  welcome: {
-    maxWidth: "800px",
-    alignSelf: "center",
-    backgroundColor: fade(theme.palette.black, 0.7),
-    color: "white",
-    padding: "24px",
-  },
-}));
+const useStyles = makeStyles((theme) => {
+  return {
+    typography: {
+      margin: "12px 0 12px 0",
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "11px",
+      },
+    },
+    backgroundImage: {
+      flex: "1 1 auto",
+      backgroundSize: "cover",
+      backgroundImage: `url(${BackgroundImage})`,
+    },
+    container: {
+      backgroundColor: fade(theme.palette.background, 0.5),
+      paddingBottom: "18px",
+      height: "100%",
+      display: "flex",
+      flexFlow: "column",
+    },
+    gallery: {
+      maxHeight: "250px",
+      maxWidth: "800px",
+      alignSelf: "center",
+      marginBottom: "64px",
+    },
+    blackFade: {
+      maxWidth: "800px",
+      alignSelf: "center",
+      backgroundColor: fade(theme.palette.black, 0.7),
+      color: "white",
+      padding: "24px",
+    },
+  };
+});
 
 const importAll = (r) => {
   return r.keys().map(r);
@@ -80,29 +84,23 @@ const Home = () => {
           >
             {getGalleryImages(images)}
           </AutoplaySlider>
-          <div className={classes.welcome}>
+          <div className={classes.blackFade}>
             <Typography className={classes.typography}>
               Wir sind ein 1995 gegründetes Ultimate Frisbee Team aus Mödling.
               Unsere gut 40 aktiven Mitglieder vereint die Begeisterung am Sport
               mit der Frisbeescheibe. <br />
               Der Verein umfasst folgende Teams:
             </Typography>
-            <Typography
-              className={classes.typography}
-              variant="h6"
-              component="h6"
-            >
+            <Typography variant="h6" component="h6">
               - Winona Raiders
             </Typography>
-            Die Kampfmannschaft des Vereins trainiert zweimal pro Woche und
-            bereitet sich so nicht nur auf zahlreiche Turniere sondern auch auf
-            das Highlight der Saison, die Österreichischen Beach
-            Staatsmeisterschaften in Bibione, vor.
-            <Typography
-              className={classes.typography}
-              variant="h6"
-              component="h6"
-            >
+            <Typography className={classes.typography}>
+              Die Kampfmannschaft des Vereins trainiert zweimal pro Woche und
+              bereitet sich so nicht nur auf zahlreiche Turniere sondern auch
+              auf das Highlight der Saison, die Österreichischen Beach
+              Staatsmeisterschaften in Bibione, vor.
+            </Typography>
+            <Typography variant="h6" component="h6">
               - Privateers
             </Typography>
             <Typography className={classes.typography}>

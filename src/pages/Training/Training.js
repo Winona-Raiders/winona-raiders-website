@@ -1,6 +1,7 @@
 import {
   Container,
   CssBaseline,
+  Divider,
   makeStyles,
   Paper,
   Table,
@@ -10,7 +11,6 @@ import {
   TableHead,
   TableRow,
   Typography,
-  Divider,
 } from "@material-ui/core";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import React from "react";
@@ -20,6 +20,9 @@ import BackgroundImage from "../../img/Home_bg.jpg";
 const useStyles = makeStyles((theme) => ({
   typography: {
     margin: "12px 0 12px 0",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "11px",
+    },
   },
   backgroundImage: {
     flex: "1 1 auto",
@@ -28,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     backgroundColor: fade(theme.palette.background, 0.5),
-    paddingTop: "120px",
+    paddingTop: "40px",
     paddingBottom: "18px",
     height: "100%",
     display: "flex",
@@ -41,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     padding: "24px",
     display: "flex",
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+    },
   },
   tableHeader: {
     "& th": {
@@ -94,7 +100,11 @@ const renderTrainings = ({
     <div className={classes.training}>
       <div className={classes.flexRow}>
         <div className={classes.flexColumn}>
-          <Typography className={classes.header} variant="h6" component="h6">
+          <Typography
+            className={{ ...classes.header, ...classes.typography }}
+            variant="h6"
+            component="h6"
+          >
             {header}
           </Typography>
           <Typography className={classes.typography}>{description}</Typography>
@@ -102,9 +112,17 @@ const renderTrainings = ({
             <Table className={classes.table}>
               <TableHead className={classes.tableHeader}>
                 <TableRow>
-                  <TableCell>Wer?</TableCell>
-                  <TableCell>Wann?</TableCell>
-                  <TableCell>Wo?</TableCell>
+                  <TableCell>
+                    <Typography className={classes.typography}>Wer?</Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography className={classes.typography}>
+                      Wann?
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography className={classes.typography}>Wo?</Typography>
+                  </TableCell>
                   <TableCell></TableCell>
                 </TableRow>
               </TableHead>
@@ -114,10 +132,20 @@ const renderTrainings = ({
                   return (
                     <TableRow key={`training-info-${indexTitle}-${index}`}>
                       <TableCell component="th" scope="row">
-                        {who}
+                        <Typography className={classes.typography}>
+                          {who}
+                        </Typography>
                       </TableCell>
-                      <TableCell>{when}</TableCell>
-                      <TableCell>{where}</TableCell>
+                      <TableCell>
+                        <Typography className={classes.typography}>
+                          {when}
+                        </Typography>
+                      </TableCell>
+                      <TableCell>
+                        <Typography className={classes.typography}>
+                          {where}
+                        </Typography>
+                      </TableCell>
                     </TableRow>
                   );
                 })}

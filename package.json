@@ -11,6 +11,7 @@
     "react-awesome-slider": "^4.1.0",
     "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1",
+    "react-responsive": "^8.1.0",
     "react-router-dom": "^5.1.2"
   },
   "scripts": {
@@ -36,8 +37,8 @@
     ]
   },
   "devDependencies": {
-    "react-scripts": "3.4.0",
     "ngrok": "^3.2.7",
-    "react-app-rewired": "^2.1.6"
+    "react-app-rewired": "^2.1.6",
+    "react-scripts": "^3.4.3"
   }
 }

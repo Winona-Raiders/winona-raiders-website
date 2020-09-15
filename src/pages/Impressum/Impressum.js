@@ -16,7 +16,7 @@ import * as instagramLogo from "../../img/icons/instagram_logo.png";
 const useStyles = makeStyles((theme) => ({
   container: {
     backgroundColor: fade(theme.palette.background, 0.5),
-    paddingTop: "120px",
+    paddingTop: "40px",
     paddingBottom: "18px",
     height: "100%",
     display: "flex",
@@ -38,6 +38,12 @@ const useStyles = makeStyles((theme) => ({
   impressum: {
     display: "flex",
     minWidth: "250px",
+  },
+  typography: {
+    margin: "12px 0 12px 0",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "11px",
+    },
   },
   socialMedia: {
     display: "flex",
@@ -63,7 +69,7 @@ const Impressum = () => {
           <div className={classes.minMargin} />
           <div className={classes.textbox}>
             <div className={classes.impressum}>
-              <Typography className={classes.impressum}>
+              <Typography className={classes.typography}>
                 Mödlinger Frisbee Sport Verein <br />
                 Josefgasse 17
                 <br />

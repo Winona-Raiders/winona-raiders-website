@@ -2,12 +2,11 @@ import {
   Container,
   CssBaseline,
   Link,
+  List,
+  ListItem,
   makeStyles,
   Paper,
   Typography,
-  List,
-  ListItem,
-  ListItemText,
 } from "@material-ui/core";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import React from "react";
@@ -20,6 +19,9 @@ const AutoplaySlider = withAutoplay(AwesomeSlider);
 const useStyles = makeStyles((theme) => ({
   typography: {
     margin: "12px 0 12px 0",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "11px",
+    },
   },
   backgroundImage: {
     flex: "1 1 auto",
@@ -28,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     backgroundColor: fade(theme.palette.background, 0.5),
-    paddingTop: "120px",
+    paddingTop: "40px",
     paddingBottom: "18px",
     height: "100%",
     display: "flex",

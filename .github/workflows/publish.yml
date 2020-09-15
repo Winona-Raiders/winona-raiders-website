@@ -1,4 +1,8 @@
 on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Publish"
   release:
     types: [published]
 name: Publish Website
