@@ -75,7 +75,7 @@ const Impressum = () => {
                 <br />
                 2340 Mödling
                 <br />
-                ZVR-Zahl: 66455276
+                ZVR-Zahl: 664355276
                 <br />
                 Email:{" "}
                 <Link
