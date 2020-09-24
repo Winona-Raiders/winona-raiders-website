@@ -87,7 +87,7 @@ const Home = () => {
           <div className={classes.blackFade}>
             <Typography className={classes.typography}>
               Wir sind ein 1995 gegründetes Ultimate Frisbee Team aus Mödling.
-              Unsere gut 40 aktiven Mitglieder vereint die Begeisterung am Sport
+              Unsere gut 45 aktiven Mitglieder vereint die Begeisterung am Sport
               mit der Frisbeescheibe. <br />
               Der Verein umfasst folgende Teams:
             </Typography>
