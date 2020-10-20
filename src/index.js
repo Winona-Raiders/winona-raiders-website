@@ -17,7 +17,7 @@ import Training from "./pages/Training/Training";
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: `cursive`,
+    fontFamily: `Verdana`,
     fontSize: 14,
     fontWeightLight: 300,
     fontWeightRegular: 400,

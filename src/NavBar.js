@@ -2,7 +2,7 @@ import { IconButton, makeStyles, Typography } from "@material-ui/core";
 import Tabs from "@material-ui/core/Tabs";
 import React from "react";
 import * as facebookLogo from "./img/icons/facebook_logo.png";
-import * as instagramLogo from "./img/icons/instagram_logo.png";
+// import * as instagramLogo from "./img/icons/instagram_logo.png";
 import TabLink from "./Routing/TabLink";
 import { useTabsWithRouter } from "./Routing/useTabWithRouter";
 import strings from "./strings";
@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   socialMedia: {
     display: "flex",
     alignItems: "center",
+    marginLeft: "24px",
   },
   logo: {
     margin: "0 7px 0 7px",
@@ -72,7 +73,7 @@ const Navbar = () => {
               className={classes.logo}
             ></img>
           </IconButton>
-          <IconButton
+          {/* <IconButton
             color="primary"
             aria-label="instagram link"
             component="span"
@@ -83,7 +84,7 @@ const Navbar = () => {
               src={instagramLogo}
               className={classes.logo}
             ></img>
-          </IconButton>
+          </IconButton> */}
         </div>
       </div>
       <Tabs

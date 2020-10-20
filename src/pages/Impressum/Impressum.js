@@ -11,7 +11,7 @@ import { fade } from "@material-ui/core/styles/colorManipulator";
 import React from "react";
 import BackgroundImage from "../../img/Home_bg.jpg";
 import * as facebookLogo from "../../img/icons/facebook_logo.png";
-import * as instagramLogo from "../../img/icons/instagram_logo.png";
+// import * as instagramLogo from "../../img/icons/instagram_logo.png";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
+    marginLeft: "24px",
   },
   logo: {
     height: "48px",
@@ -103,7 +104,7 @@ const Impressum = () => {
                     className={classes.logo}
                   ></img>
                 </IconButton>
-                <IconButton
+                {/* <IconButton
                   color="primary"
                   aria-label="instagram link"
                   component="span"
@@ -114,7 +115,7 @@ const Impressum = () => {
                     src={instagramLogo}
                     className={classes.logo}
                   ></img>
-                </IconButton>
+                </IconButton> */}
               </div>
             </div>
           </div>
