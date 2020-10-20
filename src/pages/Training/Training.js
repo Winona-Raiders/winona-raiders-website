@@ -58,6 +58,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "x-large",
     fontWeight: "bold",
     margin: "12px 0 12px 0",
+    textAlign: "center",
+    alignSelf: "center",
   },
   flexRow: {
     display: "flex",
@@ -101,7 +103,7 @@ const renderTrainings = ({
       <div className={classes.flexRow}>
         <div className={classes.flexColumn}>
           <Typography
-            className={{ ...classes.header, ...classes.typography }}
+            className={`${classes.header} ${classes.typography}`}
             variant="h6"
             component="h6"
           >
@@ -176,38 +178,22 @@ const Training = () => {
               {renderTrainings({
                 classes,
                 indexTitle: "summer-training",
-                header: "Training Sommer",
-                description:
-                  "Das Sommer-Training findet von 1. Mai bis 1. Oktober statt",
+                header: "Aktuelle Trainingszeiten",
                 trainings: [
+                  {
+                    who: "Winona Raiders / Privateers",
+                    when: "Montag 19:00-20:30",
+                    where: "Sportgymnasium , 2344 Maria Enzersdorf",
+                  },
+                  {
+                    who: "Winona Raiders / Privateers",
+                    when: "Mittwoch 19:00-20:30",
+                    where: "Lerchenhöhe, 2345 Brunn/Gebirge",
+                  },
                   {
                     who: "Winona Raiders",
                     when: "Sonntag 10:00-12:00",
                     where: "Dr.-Karl-Giannoni-Gasse, 2340 Mödling",
-                  },
-                  {
-                    who: "Winona Raiders / Privateers",
-                    when: "Donnerstag 18:00-19:30",
-                    where: "Lerchenhöhe, 2345 Brunn/Gebirge",
-                  },
-                ],
-              })}
-              {renderTrainings({
-                classes,
-                indexTitle: "winter-training",
-                header: "Training Winter",
-                description:
-                  "Das Winter-Training findet von 1. Oktober bis 1. Mai statt",
-                trainings: [
-                  {
-                    who: "Winona Raiders",
-                    when: "Sonntag 10:00-12:00",
-                    where: "Lerchenhöhe, 2345 Brunn/Gebirge",
-                  },
-                  {
-                    who: "Winona Raiders / Privateers",
-                    when: "Montag 18:30-20:00",
-                    where: "Sportgymnasium , 2344 Maria Enzersdorf",
                   },
                 ],
               })}
