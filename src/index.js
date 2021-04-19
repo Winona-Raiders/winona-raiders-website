@@ -5,8 +5,12 @@ import {
 } from "@material-ui/core/styles";
 import { default as React } from "react";
 import ReactDOM from "react-dom";
-import { Route, Switch } from "react-router";
-import { BrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useHistory,
+} from "react-router-dom";
 import Navbar from "./NavBar";
 import Home from "./pages/Home/Home";
 import Impressum from "./pages/Impressum/Impressum";
@@ -68,9 +72,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Root = () => {
   const classes = useStyles(theme);
+  const history = useHistory();
 
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <ThemeProvider theme={theme}>
         <div className={classes.root}>
           <Navbar />
@@ -90,7 +95,7 @@ const Root = () => {
           </Switch>
         </div>
       </ThemeProvider>
-    </BrowserRouter>
+    </Router>
   );
 };
 
