@@ -86,6 +86,13 @@ const Impressum = () => {
                 >
                   info@winonaraiders.org
                 </Link>
+                <br />
+                <br />
+                Kontodaten:
+                <br />
+                Marion Schneilinger
+                <br />
+                AT83 5300 0035 5502 0510
               </Typography>
               <div className={classes.socialMedia}>
                 <IconButton
