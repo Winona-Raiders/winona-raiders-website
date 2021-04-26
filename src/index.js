@@ -6,7 +6,7 @@ import {
 import { default as React } from "react";
 import ReactDOM from "react-dom";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   useHistory,
