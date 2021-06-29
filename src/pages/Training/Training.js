@@ -182,14 +182,14 @@ const Training = () => {
                 indexTitle: "summer-training",
                 header: "Aktuelle Trainingszeiten",
                 trainings: [
+                  // {
+                  //   who: "Winona Raiders / Privateers",
+                  //   when: "Montag 19:00-20:30",
+                  //   where: "Sportgymnasium , 2344 Maria Enzersdorf",
+                  // },
                   {
                     who: "Winona Raiders / Privateers",
-                    when: "Montag 19:00-20:30",
-                    where: "Sportgymnasium , 2344 Maria Enzersdorf",
-                  },
-                  {
-                    who: "Winona Raiders / Privateers",
-                    when: "Mittwoch 19:00-20:30",
+                    when: "Mittwoch 18:00-19:30",
                     where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
                   },
                   {
@@ -206,10 +206,11 @@ const Training = () => {
               className={classes.divider}
             />
             <div className={classes.locationMaps}>
-              <div>
+              {/* wird erst im winter wieder angezeigt */}
+              {/* <div>
                 <Typography> Sportgymnasium Maria Enzersdorf </Typography>
                 <GoogleMap locationLink={mariaEnzersdorf} />
-              </div>
+              </div> */}
               <div>
                 <Typography> Guntramsdorf </Typography>
                 <GoogleMap locationLink={guntramsdorf} />
