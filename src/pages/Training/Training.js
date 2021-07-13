@@ -168,8 +168,8 @@ const Training = () => {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.6106053612643!2d16.315338415986712!3d48.064050279217525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476dae433d6bb22d%3A0x8686284501384baf!2sDoktor-Karl-Renner-Stra%C3%9Fe%2011b%2C%202353%20Guntramsdorf!5e1!3m2!1sde!2sat!4v1603212855633!5m2!1sde!2sat";
   // const lerchenhoehe =
   //   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.0670673006812!2d16.275243147188743!3d48.10318099691116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDA2JzExLjUiTiAxNsKwMTYnMzMuOSJF!5e1!3m2!1sde!2sat!4v1596804555425!5m2!1sde!2sat";
-  const mariaEnzersdorf =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.399564948476!2d16.26806261598773!3d48.09898807922032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476daf662289ab63%3A0x85c899fd7f5fab91!2sSportgymnasium%20Maria%20Enzersdorf!5e1!3m2!1sde!2sat!4v1597079633412!5m2!1sde!2sat";
+  // const mariaEnzersdorf =
+  //   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.399564948476!2d16.26806261598773!3d48.09898807922032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476daf662289ab63%3A0x85c899fd7f5fab91!2sSportgymnasium%20Maria%20Enzersdorf!5e1!3m2!1sde!2sat!4v1597079633412!5m2!1sde!2sat";
   return (
     <React.Fragment>
       <CssBaseline />

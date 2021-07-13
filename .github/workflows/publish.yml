@@ -9,6 +9,8 @@ jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
+    env:
+      CI: false
     steps:
       - name: Checkout master
         uses: actions/checkout@master
