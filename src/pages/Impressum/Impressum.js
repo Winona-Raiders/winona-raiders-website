@@ -90,9 +90,9 @@ const Impressum = () => {
                 <br />
                 Kontodaten:
                 <br />
-                Marion Schneilinger
+                Mödlinger Frisbee Sport Verein 
                 <br />
-                AT83 5300 0035 5502 0510
+                AT47 3225 0000 0403 5127
               </Typography>
               <div className={classes.socialMedia}>
                 <IconButton
