@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   textbox: {
-    maxWidth: "800px",
+    maxWidth: "900px",
     alignSelf: "center",
     backgroundColor: fade(theme.palette.black, 0.7),
     color: "white",
@@ -184,8 +184,13 @@ const Training = () => {
                 trainings: [
                   {
                     who: "Winona Raiders / Privateers",
-                    when: "Donnerstag 19:00-20:30",
+                    when: "bis 20.04.2022 Donnerstag 18:00-20:30 ",
                     where: "Sportgymnasium , 2344 Maria Enzersdorf",
+                  },
+                  {
+                    who: "Winona Raiders / Privateers",
+                    when: "ab 20.04.2022 Donnerstag 18:00-20:30",
+                    where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
                   },
                   {
                     who: "Winona Raiders / Privateers",
