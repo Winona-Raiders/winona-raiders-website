@@ -189,7 +189,7 @@ const Training = () => {
                   // },
                   {
                     who: "Winona Raiders / Privateers",
-                    when: "ab 20.04.2022 Mittwoch 18:00-20:30",
+                    when: "ab 20.04.2022 Mittwoch 18:30-20:30",
                     where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
                   },
                   {
