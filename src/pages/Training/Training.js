@@ -162,8 +162,8 @@ const renderTrainings = ({
 
 const Training = () => {
   const classes = useStyles();
-  // const oetb =
-  //   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.441345183705!2d16.28570355241367!3d48.09135559587673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476daf121607a7bf%3A0xdf31eda3022c4795!2sDr.%20Karl%20Giannoni-Gasse%2018%2C%202340%20M%C3%B6dling!5e1!3m2!1sde!2sat!4v1596805260663!5m2!1sde!2sat";
+  const oetb =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.441345183705!2d16.28570355241367!3d48.09135559587673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476daf121607a7bf%3A0xdf31eda3022c4795!2sDr.%20Karl%20Giannoni-Gasse%2018%2C%202340%20M%C3%B6dling!5e1!3m2!1sde!2sat!4v1596805260663!5m2!1sde!2sat";
   const guntramsdorf =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.6106053612643!2d16.315338415986712!3d48.064050279217525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476dae433d6bb22d%3A0x8686284501384baf!2sDoktor-Karl-Renner-Stra%C3%9Fe%2011b%2C%202353%20Guntramsdorf!5e1!3m2!1sde!2sat!4v1603212855633!5m2!1sde!2sat";
   // const lerchenhoehe =
@@ -189,19 +189,19 @@ const Training = () => {
                   // },
                   {
                     who: "Winona Raiders / Privateers",
-                    when: "ab 20.04.2022 Mittwoch 18:30-20:30",
-                    where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
-                  },
-                  {
-                    who: "Winona Raiders / Privateers",
-                    when: "Sonntag 10:00-12:00",
+                    when: "Mittwoch 18:30-20:30",
                     where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
                   },
                   // {
-                  //   who: "Winona Raiders",
+                  //   who: "Winona Raiders / Privateers",
                   //   when: "Sonntag 10:00-12:00",
-                  //   where: "Dr.-Karl-Giannoni-Gasse, 2340 Mödling",
+                  //   where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
                   // },
+                  {
+                    who: "Winona Raiders",
+                    when: "Sonntag 10:00-12:00",
+                    where: "Dr.-Karl-Giannoni-Gasse 18, 2340 Mödling",
+                  },
                 ],
               })}
             </div>
@@ -217,13 +217,13 @@ const Training = () => {
                 <GoogleMap locationLink={mariaEnzersdorf} />
               </div> */}
               <div>
-                <Typography> Guntramsdorf </Typography>
+                <Typography> Doktor Karl Renner Straße </Typography>
                 <GoogleMap locationLink={guntramsdorf} />
               </div>
-              {/* <div>
+              <div>
                 <Typography> Dr.-Karl-Giannoni-Gasse </Typography>
                 <GoogleMap locationLink={oetb} />
-              </div> */}
+              </div>
               {/* <div>
                 <Typography> Lerchenhöhe </Typography>
                 <GoogleMap locationLink={lerchenhoehe} />
