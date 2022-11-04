@@ -16,13 +16,12 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   supportBanner: {
-    height: "100px",
-    width: "375px",
-    margin: "-15px 0px 0px 0px",
+    height: "60px",
+    width: "424px",
+    margin: "5px 0px 0px 0px",
     [theme.breakpoints.down("xs")]: {
-      margin: "0px 0px 0px 0px",
-      height: "60px",
-      width: "225px",
+      height: "45px",
+      width: "318px",
     },
   },
 }));
