@@ -1,12 +1,13 @@
 import { IconButton, makeStyles, Typography } from "@material-ui/core";
 import Tabs from "@material-ui/core/Tabs";
 import React from "react";
+
 import * as facebookLogo from "./img/icons/facebook_logo.png";
-// import * as instagramLogo from "./img/icons/instagram_logo.png";
 import TabLink from "./Routing/TabLink";
 import { useTabsWithRouter } from "./Routing/useTabWithRouter";
 import strings from "./strings";
 
+// import * as instagramLogo from "./img/icons/instagram_logo.png";
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: theme.palette.primary.light,
@@ -34,6 +35,10 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 7px 0 7px",
     height: "40px",
     width: "40px",
+  },
+  supportBanner: {
+    height: "100px",
+    width: "375px",
   },
   headlineContainer: {
     display: "flex",
@@ -73,6 +78,7 @@ const Navbar = () => {
               className={classes.logo}
             ></img>
           </IconButton>
+
           {/* <IconButton
             color="primary"
             aria-label="instagram link"
@@ -87,6 +93,7 @@ const Navbar = () => {
           </IconButton> */}
         </div>
       </div>
+
       <Tabs
         className={classes.tabs}
         variant="fullWidth"

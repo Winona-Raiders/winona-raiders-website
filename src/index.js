@@ -3,7 +3,7 @@ import {
   makeStyles,
   ThemeProvider,
 } from "@material-ui/core/styles";
-import { default as React } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import {
   HashRouter as Router,
@@ -11,6 +11,8 @@ import {
   Switch,
   useHistory,
 } from "react-router-dom";
+
+import Footer from "./components/Footer";
 import Navbar from "./NavBar";
 import Home from "./pages/Home/Home";
 import Impressum from "./pages/Impressum/Impressum";
@@ -93,6 +95,7 @@ const Root = () => {
               <Impressum />
             </Route>
           </Switch>
+          <Footer />
         </div>
       </ThemeProvider>
     </Router>

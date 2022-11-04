@@ -14,6 +14,7 @@ import {
 } from "@material-ui/core";
 import { fade } from "@material-ui/core/styles/colorManipulator";
 import React from "react";
+
 import GoogleMap from "../../components/GoogleMap";
 import BackgroundImage from "../../img/Home_bg.jpg";
 
@@ -164,12 +165,12 @@ const Training = () => {
   const classes = useStyles();
   const oetb =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.441345183705!2d16.28570355241367!3d48.09135559587673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476daf121607a7bf%3A0xdf31eda3022c4795!2sDr.%20Karl%20Giannoni-Gasse%2018%2C%202340%20M%C3%B6dling!5e1!3m2!1sde!2sat!4v1596805260663!5m2!1sde!2sat";
-  const guntramsdorf =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.6106053612643!2d16.315338415986712!3d48.064050279217525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476dae433d6bb22d%3A0x8686284501384baf!2sDoktor-Karl-Renner-Stra%C3%9Fe%2011b%2C%202353%20Guntramsdorf!5e1!3m2!1sde!2sat!4v1603212855633!5m2!1sde!2sat";
+  // const guntramsdorf =
+  //   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.6106053612643!2d16.315338415986712!3d48.064050279217525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476dae433d6bb22d%3A0x8686284501384baf!2sDoktor-Karl-Renner-Stra%C3%9Fe%2011b%2C%202353%20Guntramsdorf!5e1!3m2!1sde!2sat!4v1603212855633!5m2!1sde!2sat";
   // const lerchenhoehe =
   //   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.0670673006812!2d16.275243147188743!3d48.10318099691116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDA2JzExLjUiTiAxNsKwMTYnMzMuOSJF!5e1!3m2!1sde!2sat!4v1596804555425!5m2!1sde!2sat";
-  // const mariaEnzersdorf =
-  //   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.399564948476!2d16.26806261598773!3d48.09898807922032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476daf662289ab63%3A0x85c899fd7f5fab91!2sSportgymnasium%20Maria%20Enzersdorf!5e1!3m2!1sde!2sat!4v1597079633412!5m2!1sde!2sat";
+  const mariaEnzersdorf =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.399564948476!2d16.26806261598773!3d48.09898807922032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476daf662289ab63%3A0x85c899fd7f5fab91!2sSportgymnasium%20Maria%20Enzersdorf!5e1!3m2!1sde!2sat!4v1597079633412!5m2!1sde!2sat";
   return (
     <React.Fragment>
       <CssBaseline />
@@ -182,16 +183,17 @@ const Training = () => {
                 indexTitle: "summer-training",
                 header: "Aktuelle Trainingszeiten",
                 trainings: [
-                  // {
-                  //   who: "Winona Raiders / Privateers",
-                  //   when: "bis 20.04.2022 Donnerstag 18:00-20:30 ",
-                  //   where: "Sportgymnasium , 2344 Maria Enzersdorf",
-                  // },
                   {
                     who: "Winona Raiders / Privateers",
-                    when: "Mittwoch 18:30-20:30",
-                    where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
+                    when: "ab 09.11.2022 Mittwoch - 19:00-21:00 ",
+                    where:
+                      "Sportgymnasium Gießhüblerstraße 37-39  2344 Maria Enzersdorf",
                   },
+                  // {
+                  //   who: "Winona Raiders / Privateers",
+                  //   when: "Mittwoch 18:30-20:30",
+                  //   where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
+                  // },
                   // {
                   //   who: "Winona Raiders / Privateers",
                   //   when: "Sonntag 10:00-12:00",
@@ -199,7 +201,7 @@ const Training = () => {
                   // },
                   {
                     who: "Winona Raiders",
-                    when: "Sonntag 10:00-12:00",
+                    when: "Sonntag -  10:00-12:00",
                     where: "Dr.-Karl-Giannoni-Gasse 18, 2340 Mödling",
                   },
                 ],
@@ -212,14 +214,14 @@ const Training = () => {
             />
             <div className={classes.locationMaps}>
               {/* wird erst im winter wieder angezeigt */}
-              {/* <div>
+              <div>
                 <Typography> Sportgymnasium Maria Enzersdorf </Typography>
                 <GoogleMap locationLink={mariaEnzersdorf} />
-              </div> */}
-              <div>
+              </div>
+              {/* <div>
                 <Typography> Doktor Karl Renner Straße </Typography>
                 <GoogleMap locationLink={guntramsdorf} />
-              </div>
+              </div> */}
               <div>
                 <Typography> Dr.-Karl-Giannoni-Gasse </Typography>
                 <GoogleMap locationLink={oetb} />

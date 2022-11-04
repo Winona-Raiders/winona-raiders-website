@@ -11,6 +11,7 @@ import React from "react";
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 import AwesomeSliderStyles from "react-awesome-slider/src/styles";
+
 import BackgroundImage from "../../img/Home_bg.jpg";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
