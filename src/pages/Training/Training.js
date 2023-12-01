@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   textbox: {
-    maxWidth: "900px",
+    maxWidth: "1100px",
     alignSelf: "center",
     backgroundColor: fade(theme.palette.black, 0.7),
     color: "white",
@@ -116,9 +116,12 @@ const renderTrainings = ({
               <TableHead className={classes.tableHeader}>
                 <TableRow>
                   <TableCell>
-                    <Typography className={classes.typography}>Wer?</Typography>
+                    <Typography className={classes.typography}>Was?</Typography>
                   </TableCell>
                   <TableCell>
+                    <Typography className={classes.typography}>Wer?</Typography>
+                  </TableCell>
+                  <TableCell style={{ padding: "16px 0px 16px 0px" }} >
                     <Typography className={classes.typography}>
                       Wann?
                     </Typography>
@@ -126,27 +129,31 @@ const renderTrainings = ({
                   <TableCell>
                     <Typography className={classes.typography}>Wo?</Typography>
                   </TableCell>
-                  <TableCell></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {trainings.map((training, index) => {
-                  const { who, when, where } = training;
+                  const { what, who, when, where, where2 } = training;
                   return (
                     <TableRow key={`training-info-${indexTitle}-${index}`}>
                       <TableCell component="th" scope="row">
                         <Typography className={classes.typography}>
+                          {what}
+                        </Typography>
+                      </TableCell>
+                      <TableCell component="th" scope="row" >
+                        <Typography className={classes.typography} style={{ width: "140px"}}>
                           {who}
                         </Typography>
                       </TableCell>
-                      <TableCell style={{ padding: "16px 0px 16px 0px" }}>
-                        <Typography className={classes.typography}>
+                      <TableCell style={{ padding: "16px 20px 16px 0px"}}>
+                        <Typography className={classes.typography} style={{ width: "110px"}}>
                           {when}
                         </Typography>
                       </TableCell>
                       <TableCell>
-                        <Typography className={classes.typography}>
-                          {where}
+                        <Typography className={classes.typography} style={{ width: "200px"}}>
+                          {where}<br/><br/>{where2}
                         </Typography>
                       </TableCell>
                     </TableRow>
@@ -161,6 +168,19 @@ const renderTrainings = ({
   );
 };
 
+// Indoor-Training
+// Donnerstags
+// 19:00-21:00 
+// BRG Maria Enzersdorf
+
+// Outdoor-Training
+// Sonntags
+// 10:00-12:00
+// ÖTB-Platz Mödling
+// Bzw.
+// ASK Guntramsdorf
+// (Abhängig vom Wetter und der Platzbeschaffenheit)
+
 const Training = () => {
   const classes = useStyles();
   const oetb =
@@ -169,8 +189,8 @@ const Training = () => {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.6106053612643!2d16.315338415986712!3d48.064050279217525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476dae433d6bb22d%3A0x8686284501384baf!2sDoktor-Karl-Renner-Stra%C3%9Fe%2011b%2C%202353%20Guntramsdorf!5e1!3m2!1sde!2sat!4v1603212855633!5m2!1sde!2sat";
   // const lerchenhoehe =
   //   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1627.0670673006812!2d16.275243147188743!3d48.10318099691116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDA2JzExLjUiTiAxNsKwMTYnMzMuOSJF!5e1!3m2!1sde!2sat!4v1596804555425!5m2!1sde!2sat";
-  // const mariaEnzersdorf =
-  //   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.399564948476!2d16.26806261598773!3d48.09898807922032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476daf662289ab63%3A0x85c899fd7f5fab91!2sSportgymnasium%20Maria%20Enzersdorf!5e1!3m2!1sde!2sat!4v1597079633412!5m2!1sde!2sat";
+  const mariaEnzersdorf =
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.399564948476!2d16.26806261598773!3d48.09898807922032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476daf662289ab63%3A0x85c899fd7f5fab91!2sSportgymnasium%20Maria%20Enzersdorf!5e1!3m2!1sde!2sat!4v1597079633412!5m2!1sde!2sat";
   return (
     <React.Fragment>
       <CssBaseline />
@@ -183,26 +203,29 @@ const Training = () => {
                 indexTitle: "summer-training",
                 header: "Aktuelle Trainingszeiten",
                 trainings: [
+                  {
+                    what: "Hallentraining",
+                    who: "Winona Raiders / Privateers",
+                    when: "Donnerstag\n 19:00-21:00",
+                    where:
+                      "Sportgymnasium Gießhüblerstraße 37-39  2344 Maria Enzersdorf",
+                  },
                   // {
                   //   who: "Winona Raiders / Privateers",
-                  //   when: "Mittwoch\n 19:00-21:00",
-                  //   where:
-                  //     "Sportgymnasium Gießhüblerstraße 37-39  2344 Maria Enzersdorf",
+                  //   when: "Mittwoch 18:30-20:30",
+                  //   where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
                   // },
-                  {
-                    who: "Winona Raiders / Privateers",
-                    when: "Mittwoch 18:30-20:30",
-                    where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
-                  },
                   // {
                   //   who: "Winona Raiders / Privateers",
                   //   when: "Sonntag\n 10:00-12:00",
                   //   where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
                   // },
                   {
+                    what: "Outdoortraining",
                     who: "Winona Raiders / Privateers",
                     when: "Sonntag 10:00-12:00",
-                    where: "Dr.-Karl-Giannoni-Gasse 18, 2340 Mödling",
+                    where: "Doktor Karl Renner Straße 11b, 2353 Guntramsdorf",
+                    where2:  "Dr.-Karl-Giannoni-Gasse 18, 2340 Mödling"
                   },
                 ],
               })}
@@ -214,10 +237,10 @@ const Training = () => {
             />
             <div className={classes.locationMaps}>
               {/* wird erst im winter wieder angezeigt */}
-              {/* <div>
+             <div>
                 <Typography> Sportgymnasium Maria Enzersdorf </Typography>
                 <GoogleMap locationLink={mariaEnzersdorf} />
-              </div> */}
+              </div>
               <div>
                 <Typography> Doktor Karl Renner Straße </Typography>
                 <GoogleMap locationLink={guntramsdorf} />
