@@ -108,8 +108,8 @@ const Juniors = () => {
               Training kommst:
               <List>
                 <ListItem>1. Trinkflasche</ListItem>
-                <ListItem>2. Stoppelschuhe"</ListItem>
-                <ListItem>3. Weißes und schwarzes Sport-Shirt"</ListItem>
+                <ListItem>2. Stoppelschuhe</ListItem>
+                <ListItem>3. Weißes und schwarzes Sport-Shirt</ListItem>
                 <ListItem>
                   4. Email an{" "}
                   <Link
@@ -121,7 +121,7 @@ const Juniors = () => {
                   </Link>
                 </ListItem>
               </List>
-              Auf geht's - Pack alles zusammen und schreib uns wir sehen uns im
+              Auf geht's - Pack alles zusammen und schreib uns, wir sehen uns im
               Training!
             </Typography>
           </div>
