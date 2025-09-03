@@ -16,9 +16,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22.14.0'
+        uses: actions/setup-node@v1
 
       - name: Install dependencies, build site and publish it
       - run: npm ci
