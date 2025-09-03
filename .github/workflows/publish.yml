@@ -25,5 +25,5 @@ jobs:
           npm ci
           npm run build
           sudo apt-get install ncftp
-          mv ./build ./www.winonaraiders.org
+          mv ./dist ./www.winonaraiders.org
           ncftpput -R -u ${{ secrets.FTP_USERNAME }} -p ${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST }} . www.winonaraiders.org/
