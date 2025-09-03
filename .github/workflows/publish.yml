@@ -18,7 +18,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
 
-      - name: Install dependencies, build site and publish it
+      - name: Install dependencies and build site and publish it
       - run: npm ci
       - run: npm run build
       - run: sudo apt-get install ncftp
