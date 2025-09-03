@@ -28,6 +28,9 @@ export default function Carousel({folder}: imageLocationProps) {
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [loaded, setLoaded] = useState(false);
+    const [isPaused, setIsPaused] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const slideDuration = 5000; // = 5 seconds
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
         {
             loop: true,
@@ -53,19 +56,43 @@ export default function Carousel({folder}: imageLocationProps) {
                 function nextTimeout() {
                     clearTimeout(timeout)
                     if (mouseOver) return
+
+                    let start: number;
+
+                    function step(timestamp: number) {
+                        if (!start) {
+                            start = timestamp;
+                        }
+
+                        const elapsed = timestamp - start;
+
+                        if (!mouseOver) {
+                            setProgress(Math.min(elapsed / slideDuration, 1));
+                        }
+
+                        if (elapsed < slideDuration) {
+                            requestAnimationFrame(step);
+                        }
+                    }
+
+                    requestAnimationFrame(step);
+
                     timeout = setTimeout(() => {
                         slider.next()
-                    }, 5000)
+                        setProgress(0)
+                    }, slideDuration)
                 }
 
                 slider.on("created", () => {
                     slider.container.addEventListener("mouseover", () => {
                         mouseOver = true
                         clearNextTimeout()
+                        setIsPaused(true)
                     })
                     slider.container.addEventListener("mouseout", () => {
                         mouseOver = false
                         nextTimeout()
+                        setIsPaused(false)
                     })
                     nextTimeout()
                 })
@@ -95,7 +122,6 @@ export default function Carousel({folder}: imageLocationProps) {
                     <div
                         ref={sliderRef}
                         className={`keen-slider w-full h-full ${loaded ? 'opacity-100' : 'opacity-0'}`}
-                        // style={{ transition: 'opacity 0.5s ease' }}
                     >
                         {images.map((src, idx) => (
                             <div className="keen-slider__slide" key={idx}>
@@ -110,6 +136,13 @@ export default function Carousel({folder}: imageLocationProps) {
                                 />
                             </div>
                         ))}
+
+                        <div className="absolute bottom-0 left-0 w-full h-1.5 bg-gray-300">
+                            <div
+                                className="h-full bg-black transition-all duration-0"
+                                style={{ width: `${progress * 100}%` }}
+                            />
+                        </div>
                     </div>
                 </div>
 
