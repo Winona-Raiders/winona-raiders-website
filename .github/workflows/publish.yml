@@ -16,11 +16,14 @@ jobs:
         uses: actions/checkout@master
 
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.14.0'
 
       - name: Install dependencies and build site and publish it
-      - run: npm ci
-      - run: npm run build
-      - run: sudo apt-get install ncftp
-      - run: mv ./build ./www.winonaraiders.org
-      - run: ncftpput -R -u ${{ secrets.FTP_USERNAME }} -p ${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST }} . www.winonaraiders.org/
+      - run: |
+          npm ci
+          npm run build
+          sudo apt-get install ncftp
+          mv ./build ./www.winonaraiders.org
+          ncftpput -R -u ${{ secrets.FTP_USERNAME }} -p ${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST }} . www.winonaraiders.org/
