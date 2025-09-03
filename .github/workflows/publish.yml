@@ -14,8 +14,13 @@ jobs:
     steps:
       - name: Checkout master
         uses: actions/checkout@master
+
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.14.0'
+
+      - name: Install dependencies, build site and publish it
       - run: npm ci
       - run: npm run build
       - run: sudo apt-get install ncftp
