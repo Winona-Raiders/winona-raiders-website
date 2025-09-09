@@ -2,7 +2,7 @@
 ![publish branch parameter](https://github.com/Stezido/winona-raiders-website/workflows/Publish/badge.svg)
 # winona-raiders-website
 
-This project builds an astro application for the Winona Raiders Mödling Frisbee Team and deploys it via github pages to our ftp-server.
+This project builds an astro application for the Winona Raiders Mödling Frisbee Team and deploys it via github to our ftp-server.
 
 ## Tech Stack
 
