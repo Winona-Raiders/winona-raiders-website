@@ -8,14 +8,14 @@ type imageLocationProps = {
 
 export default function Carousel({folder}: imageLocationProps) {
     const galleryImports = import.meta.glob(
-        '/src/img/gallery/*.{jpg,jpeg,png}', {
+        '/src/img/gallery/*.{jpg,jpeg,png,webp}', {
             eager: true,
             import: 'default',
             query: '?url'
         }
     );
     const juniorImports = import.meta.glob(
-        '/src/img/juniors/*.{jpg,jpeg,png}', {
+        '/src/img/juniors/*.{jpg,jpeg,png,webp}', {
             eager: true,
             import: 'default',
             query: '?url'
@@ -151,6 +151,7 @@ export default function Carousel({folder}: imageLocationProps) {
                         {Array.from({ length: instanceRef.current.track.details.slides.length }).map((_, idx) => (
                             <button
                                 key={idx}
+                                aria-label={`Button for image ${idx + 1}`}
                                 onClick={() => instanceRef.current?.moveToIdx(idx)}
                                 className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${currentSlide === idx ? 'scale-150 bg-black hover:cursor-pointer' : 'bg-gray-500 hover:cursor-pointer hover:scale-125'}`}
                             />
